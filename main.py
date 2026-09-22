@@ -1,6 +1,4 @@
 #mPythonType:0
-#mPythonType:0
-#mPythonType:0
 
 from mpython import *
 from decoder import decode
@@ -28,8 +26,9 @@ def preload():
 
 def oled_show():
     global codein, info, mode, mode_note
+    codedis = ' '.join([codein[i: i+8] for i in range(0, len(codein), 8)])
     oled.fill(0)
-    oled.DispChar(codein[-18:], 0, 0, 1)
+    oled.DispChar(codedis[-18:], 0, 0, 1)
     oled.DispChar(info, 0, 16, 1)
     oled.DispChar('MODE '+str(mode)+' '+mode_note[mode], 0, 48, 1)
     oled.show()
