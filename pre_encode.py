@@ -1,6 +1,6 @@
 pre_encoded = {}
 
-def rite(c):
+def rite():
     with open('pre_encoded.txt', 'r') as f:
         con = eval(f.read())
     con[name] = data
@@ -17,5 +17,4 @@ while input() != 'bpm':
 data.append(int(input()))
 print(data)
 if input() == 'Y':
-    rite(data)
-
+    rite()
